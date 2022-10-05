@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Menampilkan Tooltip dan Popup</title>
+        <link rel="stylesheet" href="../leaflet.css"/>
+        <script src="../leaflet.js"></script>
+    </head>
+    <body>;
+        <div id="mapku" style="width: 100%; height: 600px;"></div>
+    </body>
+    <script type="text/javascript">
+        var mymap = L.map('mapku').setView([-0.9285558,100.3629103],15);//kota padang
+        var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(mymap);
+    
+    var info_masjid_raya = '<p style="text-align: center;"><img src="images/masjid_raya.jpg" width="250px" height="100px"/></p> <p> Majid Raya Sumatera Barat adalah masjid tanpa kubah. Atap masjid berupa khas rumah adat Minang serta terdapat ukiran-ukiran pada dinding. Masyarakat Sumatera Barat terkenal dengan pepatah adat basandi syarak, basandi Kitabullah, yang artinya adat bersendikan kepada agama, dan agama bersendikan Kitabullah Al-Quran. Hal itulah tercemrmin dalam Masjid Raya Sumatera Barat. <a href="https://travel.detik.com/domestic-destination/d-4799337/pesona-masjid-raya-sumatera-barat-yang-jadi-ikon-kota-padang"> Baca Selengkapnya </a></p>';
+
+    L.marker([-0.924381,100.3623671]).bindPopup("<b>Info Masjid Raya Sumatera Barat</b> Waktu Zuhur : 12.45 WIB").bindPopup(info_masjid_raya).addTo(mymap);
+    L.marker([-0.9356182,100.3558622]).bindPopup("<b>Informasi Layanan Kantor Gubenur</b> <br> Layanan Ditutup Sementara Karena Covid").addTo(mymap);
+        
+    </script>
+</html>
+
