@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Marker</title>
+        <link rel="stylesheet" href="leaflet.css"/>
+        <script src="leaflet.js"></script>
+    </head>
+    <body>
+        <div id="mapku" style="width: 100%; height: 600px;"></div>
+    </body>
+    <script type="text/javascript">
+        var mymap = L.map('mapku').setView([-0.913817,100.4657455], 13);
+        var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(mymap);
+        
+        var locations = [[-0.9143748048752257, 100.46619391166261,'PNP','Informasi PNP'],//pnp
+                         [-0.9149979675726535, 100.45814666748164,'UNAND','Informasi UNAND'],//unand
+                         [-0.9233497113985886, 100.44749310615448,'Warung Salsa','Info Warung Salsa'],//warung salsa
+                         [-0.9235734574401725, 100.44677776837582,'kost abdul rahim','Warung Salsa'],//kost abdul rahim
+                         [-0.9224408904633781, 100.44531911993857,'mushola mutahirin','Warung Salsa'],//mushola mutahirin
+                         [-0.9236960013577178, 100.44528693342995,'mushola muhansar','Warung Salsa'],//mushola muhansar
+                         [-0.923642364149077, 100.44464320325733,'bri','Warung Salsa'],//bri
+                         [-0.9235964425743382, 100.44357708097301,'aciak','Warung Salsa'],//aciak
+                         [-0.9221773694127892, 100.44475652754005,'kos puta kakato','Warung Salsa'],//kos puta kakato
+                         [-0.9217891461804243, 100.44790273818418, 'villa','Warung Salsa']//villa
+                        ];
+         
+                        
+        for (var i = 0; i<locations.length;i++){
+            marker=new L.marker([locations[i][0],locations[i][1]]).addTo(mymap).bindTooltip(location[i][2]).bindPopup(location[i][3]);
+        }
+
+        
+    </script>
+</html>
+
+
